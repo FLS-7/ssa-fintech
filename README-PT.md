@@ -38,7 +38,7 @@ Este projeto simula a infraestrutura de dados de uma fintech, realizando ingest�
 ## 🗺️ Roadmap (Próximos Commits)
 
 - [x] Arquitetura inicial e documentação
-- [ ] Motor de ingestão de dados assíncrono (Bronze)
+- [x] Motor de ingestão de dados assíncrono (Bronze)
 - [ ] Transformações SQL e lógica de risco (Silver)
 - [ ] Integração com API e automação (Gold)
 - [ ] Dashboard final e testes unitários (QA)

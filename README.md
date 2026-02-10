@@ -17,28 +17,28 @@ This project simulates a fintech's data infrastructure, handling transaction ing
 
 ## 🏗️ Data Architecture (Medallion Pattern)
 
-1.  **Bronze Layer (Raw):** Asynchronous ingestion of transaction data using `Python Asyncio` and `Faker`.
-2.  **Silver Layer (Trusted):** Data cleaning and complex transformations using `SQL Window Functions` (LAG/LEAD) to detect location hopping and suspicious patterns.
-3.  **Gold Layer (Business):** Final business logic and risk scoring, delivered via `Google Sheets API` to stakeholders.
+1. **Bronze Layer (Raw):** Asynchronous ingestion of transaction data using `Python Asyncio` and `Faker`.
+2. **Silver Layer (Trusted):** Data cleaning and complex transformations using `SQL Window Functions` (LAG/LEAD) to detect location hopping and suspicious patterns.
+3. **Gold Layer (Business):** Final business logic and risk scoring, delivered via `Google Sheets API` to stakeholders.
 
 ## 🛠️ Tech Stack
 
-*   **Language:** Python 3.11+ (focus on `asyncio`, `pandas`, `pytest`)
-*   **Database:** SQLite (Relational Storage)
-*   **Analytics:** SQL (Window Functions, CTEs)
-*   **Automation:** Google Sheets API (`gspread`)
-*   **Visualization:** Looker Studio (Executive Dashboard)
+* **Language:** Python 3.11+ (focus on `asyncio`, `pandas`, `pytest`)
+* **Database:** SQLite (Relational Storage)
+* **Analytics:** SQL (Window Functions, CTEs)
+* **Automation:** Google Sheets API (`gspread`)
+* **Visualization:** Looker Studio (Executive Dashboard)
 
 ## 📈 Key Engineering Features
 
-*   **Real-Time Simulation:** Asynchronous generation of 1,000+ concurrent transactions.
-*   **Anomaly Detection:** SQL-based logic to identify high-risk operations between distant neighborhoods in short timeframes.
-*   **Automated Pipeline:** Full ETL process from raw CSV to cloud-based BI dashboards.
+* **Real-Time Simulation:** Asynchronous generation of 1,000+ concurrent transactions.
+* **Anomaly Detection:** SQL-based logic to identify high-risk operations between distant neighborhoods in short timeframes.
+* **Automated Pipeline:** Full ETL process from raw CSV to cloud-based BI dashboards.
 
 ## 🗺️ Roadmap (Upcoming Commits)
 
-- [x] Initial architecture and documentation
-- [ ] Asynchronous data ingestion engine (Bronze)
-- [ ] SQL transformation and risk logic (Silver)
-- [ ] API integration and automation (Gold)
-- [ ] Final dashboard and unit testing (QA)
+* [x] Initial architecture and documentation
+* [x] Asynchronous data ingestion engine (Bronze)
+* [ ] SQL transformation and risk logic (Silver)
+* [ ] API integration and automation (Gold)
+* [ ] Final dashboard and unit testing (QA)
