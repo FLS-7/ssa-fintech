@@ -39,6 +39,6 @@ This project simulates a fintech's data infrastructure, handling transaction ing
 
 * [x] Initial architecture and documentation
 * [x] Asynchronous data ingestion engine (Bronze)
-* [ ] SQL transformation and risk logic (Silver)
-* [ ] API integration and automation (Gold)
+* [x] SQL transformation and risk logic (Silver)
+* [x] API integration and automation (Gold)
 * [ ] Final dashboard and unit testing (QA)

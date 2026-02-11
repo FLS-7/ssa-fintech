@@ -39,6 +39,6 @@ Este projeto simula a infraestrutura de dados de uma fintech, realizando ingest�
 
 - [x] Arquitetura inicial e documentação
 - [x] Motor de ingestão de dados assíncrono (Bronze)
-- [ ] Transformações SQL e lógica de risco (Silver)
-- [ ] Integração com API e automação (Gold)
+- [x] Transformações SQL e lógica de risco (Silver)
+- [x] Integração com API e automação (Gold)
 - [ ] Dashboard final e testes unitários (QA)
