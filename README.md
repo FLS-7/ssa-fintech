@@ -19,15 +19,15 @@ This project simulates a fintech's data infrastructure, handling transaction ing
 
 1. **Bronze Layer (Raw):** Asynchronous ingestion of transaction data using `Python Asyncio` and `Faker`.
 2. **Silver Layer (Trusted):** Data cleaning and complex transformations using `SQL Window Functions` (LAG/LEAD) to detect location hopping and suspicious patterns.
-3. **Gold Layer (Business):** Final business logic and risk scoring, delivered via `Google Sheets API` to stakeholders.
+3. **Gold Layer (Business):** Final business logic and risk scoring, exported to a CSV of anomalies (`gold_anomalies.csv`) consumed by dashboards (e.g., Google Sheets + Looker Studio).
 
 ## 🛠️ Tech Stack
 
 * **Language:** Python 3.11+ (focus on `asyncio`, `pandas`, `pytest`)
 * **Database:** SQLite (Relational Storage)
 * **Analytics:** SQL (Window Functions, CTEs)
-* **Automation:** Google Sheets API (`gspread`)
-* **Visualization:** Looker Studio (Executive Dashboard)
+* **Automation:** Python pipelines exporting BI-ready CSVs (no mandatory cloud API dependency in the core flow).
+* **Visualization:** Looker Studio (Executive Dashboard) via Google Sheets or any dashboard tool connected to the Gold CSV.
 
 ## 📈 Key Engineering Features
 

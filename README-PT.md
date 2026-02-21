@@ -19,15 +19,15 @@ Este projeto simula a infraestrutura de dados de uma fintech, realizando ingest�
 
 1. **Camada Bronze (Raw):** Ingestão assíncrona de dados de transações utilizando `Python Asyncio` e `Faker`.
 2. **Camada Silver (Trusted):** Limpeza de dados e transformações complexas utilizando **Window Functions SQL** (LAG/LEAD) para detectar saltos de localização e padrões suspeitos.
-3. **Camada Gold (Business):** Lógica de negócio final e pontuação de risco, entregue via **Google Sheets API** para os stakeholders.
+3. **Camada Gold (Business):** Lógica de negócio final e pontuação de risco, exportadas para um CSV de anomalias (`gold_anomalies.csv`) consumido por dashboards (ex.: Google Sheets + Looker Studio).
 
 ## 🛠️ Stack Tecnológico
 
 - **Linguagem:** Python 3.11+ (foco em `asyncio`, `pandas`, `pytest`)
 - **Banco de Dados:** SQLite (Armazenamento Relacional)
 - **Análise:** SQL (Window Functions, CTEs)
-- **Automação:** Google Sheets API (`gspread`)
-- **Visualização:** Looker Studio (Dashboard Executivo)
+- **Automação:** Pipelines em Python que exportam CSVs prontos para BI (sem dependência obrigatória de APIs de nuvem).
+- **Visualização:** Looker Studio (Dashboard Executivo) consumindo dados via Google Sheets ou outra ferramenta de dashboard conectada ao CSV Gold.
 
 ## 📈 Principais Recursos de Engenharia
 
