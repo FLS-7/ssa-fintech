@@ -41,4 +41,39 @@ Este projeto simula a infraestrutura de dados de uma fintech, realizando ingest�
 - [x] Motor de ingestão de dados assíncrono (Bronze)
 - [x] Transformações SQL e lógica de risco (Silver)
 - [x] Integração com API e automação (Gold)
-- [ ] Dashboard final e testes unitários (QA)
+- [x] Dashboard final e testes unitários (QA)
+
+## ▶️ Como executar o pipeline
+
+1. Instale dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Rode o pipeline completo:
+   ```bash
+   python -m src.pipeline
+   ```
+3. Artefatos gerados:
+   - Banco: `data/ssa.db` (tabela `bronze_transactions`)
+   - Silver: `data/silver_processed.csv` (inclui `anomaly_flag`)
+   - Gold: `data/gold_anomalies.csv` (apenas registros com flag diferente de `Normal`)
+
+## 📊 Guia de Dashboard (Looker Studio via Google Sheets)
+
+- Crie uma planilha no Google Sheets e importe `data/gold_anomalies.csv`.
+- No Looker Studio, crie uma fonte de dados conectada à planilha.
+- Gráficos sugeridos:
+  - Séries temporais de contagem de anomalias por dia/hora.
+  - Barras por `neighborhood` mostrando distribuição de flags (`Suspect: Location Hop`, `Critical: High Value`).
+  - Tabela com top transações por `amount` com flag crítica.
+
+## ✅ Testes
+
+- Rodar:
+  ```bash
+  pytest
+  ```
+- Abrangência:
+  - Verifica existência da tabela `bronze_transactions` e volume.
+  - Gera `silver_processed.csv` com coluna `anomaly_flag`.
+  - Gera `gold_anomalies.csv` com subset de anomalias.

@@ -41,4 +41,39 @@ This project simulates a fintech's data infrastructure, handling transaction ing
 * [x] Asynchronous data ingestion engine (Bronze)
 * [x] SQL transformation and risk logic (Silver)
 * [x] API integration and automation (Gold)
-* [ ] Final dashboard and unit testing (QA)
+* [x] Final dashboard and unit testing (QA)
+
+## ▶️ How to run the pipeline
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Run the full pipeline:
+   ```bash
+   python -m src.pipeline
+   ```
+3. Generated artifacts:
+   - DB: `data/ssa.db` (`bronze_transactions` table)
+   - Silver: `data/silver_processed.csv` (includes `anomaly_flag`)
+   - Gold: `data/gold_anomalies.csv` (only non-`Normal` flags)
+
+## 📊 Dashboard guide (Looker Studio via Google Sheets)
+
+* Import `data/gold_anomalies.csv` into a Google Sheet.
+* In Looker Studio, create a data source connected to that sheet.
+* Suggested visuals:
+  * Time series of anomaly counts by hour/day.
+  * Bar chart by `neighborhood` split by anomaly flags.
+  * Table of top transactions by `amount` with critical flags.
+
+## ✅ Tests
+
+* Run:
+  ```bash
+  pytest
+  ```
+* Coverage:
+  * Ensures `bronze_transactions` exists with records.
+  * Produces `silver_processed.csv` with `anomaly_flag`.
+  * Produces `gold_anomalies.csv` as a filtered subset.
