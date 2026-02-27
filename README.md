@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg?style=for-the-badge&logo=python)
 ![SQL](https://img.shields.io/badge/SQL-Advanced-orange.svg?style=for-the-badge&logo=postgresql)
 ![Architecture](https://img.shields.io/badge/Architecture-Medallion-green.svg?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-green?style=for-the-badge)
 
 <p align="center">
   <b>Leia em Português:</b> <a href="README-PT.md">🇧🇷 Português</a>
