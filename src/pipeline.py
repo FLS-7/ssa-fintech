@@ -1,6 +1,6 @@
-from bronze_async import main as bronze_main
-from silver_exec import main as silver_main
-from gold_orchestrator import build_gold_layer
+from .bronze_async import main as bronze_main
+from .silver_exec import main as silver_main
+from .gold_orchestrator import build_gold_layer
 
 def run() -> None:
     bronze_main()
